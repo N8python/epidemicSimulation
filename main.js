@@ -206,7 +206,7 @@ function draw() {
         }
     });
     if (step % 100 === 0 && infectionStarted && people.some(person => person.infected)) {
-        history.push([count, infectedPeople, peopleDead])
+        history.push([count, infectedPeople, peopleDead, people.filter(person => person.infected).length])
         count++;
     }
     step++;
@@ -237,14 +237,14 @@ window.onload = () => {
         if (people.some(person => person.infected)) {
             new Chart(ctx, {
                 "type": "line",
-                "data": { "labels": history.map(x => x[0]), "datasets": [{ "label": "People Infected", "data": history.map(x => x[1]), "fill": false, "borderColor": "rgb(75, 192, 192)", "lineTension": 0.1 }, { "label": "People Dead", "data": history.map(x => x[2]), "fill": false, "borderColor": "rgb(255, 0, 0)", "lineTension": 0.1 }] },
+                "data": { "labels": history.map(x => x[0]), "datasets": [{ "label": "Total Cases", "data": history.map(x => x[1]), "fill": false, "borderColor": "rgb(75, 192, 192)", "lineTension": 0.1 }, { "label": "People Dead", "data": history.map(x => x[2]), "fill": false, "borderColor": "rgb(125, 0, 0)", "lineTension": 0.1 }, { "label": "People Infected", "data": history.map(x => x[3]), "fill": false, "borderColor": "rgb(255,0, 0)", "lineTension": 0.1 }] },
                 "options": {
                     events: [],
                     animation: false
                 }
             });
         }
-    }, 1666)
+    }, 1666);
     const instruct = document.getElementById("instruct")
     document.getElementById("instructions").onclick = () => {
         if (instruct.hasAttribute("hidden")) {
