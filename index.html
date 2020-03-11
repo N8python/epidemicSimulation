@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Epidemic Simulation</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <div class="w3-border w3-right w3-margin w3-padding" id="dashboard">
+        <h1>Dashboard</h1>
+        <p id="pop">Population: 100</p>
+        <p id="dead">Dead: 0</p>
+        <h3>Disease:</h3>
+        <p>Mortality:</p>
+        <label for="mortality" id="mortLabel">10%</label>
+        <input type="range" min="0" max="100" value="10" class="slider" id="mortality">
+        <p>Transmissibility:</p>
+        <label for="transmissibility" id="tLabel">1</label>
+        <input type="range" min="0" max="100" value="50" class="slider" id="transmissibility">
+        <p>Duration:</p>
+        <p class="w3-small">Total Duration:</p>
+        <label for="totalDuration" id="dLabel">24 hours</label>
+        <input type="range" min="0" max="168" value="24" class="slider" id="totalDuration">
+        <p class="w3-small">Time Till Contagious:</p>
+        <label for="timeContag" id="cLabel">5 hours</label>
+        <input type="range" min="0" max="168" value="5" class="slider" id="timeContag">
+        <p class="w3-small">Time Till Symptoms:</p>
+        <label for="timeContag" id="sLabel">10 hours</label>
+        <input type="range" min="0" max="168" value="10" class="slider" id="timeSymp">
+    </div>
+    <canvas id="epidemic" class="w3-right" width="400px" height="200px"></canvas>
+</body>
+
+</html>
