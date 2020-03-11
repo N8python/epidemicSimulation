@@ -245,4 +245,12 @@ window.onload = () => {
             });
         }
     }, 1666)
+    const instruct = document.getElementById("instruct")
+    document.getElementById("instructions").onclick = () => {
+        if (instruct.hasAttribute("hidden")) {
+            instruct.removeAttribute("hidden")
+        } else {
+            instruct.setAttribute("hidden", "true")
+        }
+    }
 }

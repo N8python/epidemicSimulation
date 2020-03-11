@@ -12,8 +12,15 @@
 </head>
 
 <body>
-    <div class="w3-border w3-right w3-margin w3-padding" id="dashboard">
+    <div class="w3-border w3-right w3-margin w3-padding" style="max-height: 650px; overflow: scroll;" id="dashboard">
         <h1>Dashboard</h1>
+        <button id="instructions">Instructions</button>
+        <div id="instruct">
+            <h3>Instructions:</h3>
+            <p>Each white dot represents a person.</p>
+            <p>Click to infect someone with your disease.</p>
+            <p>Light red dots are infected <br>but not showing symptoms, <br>red dots are showing symptoms, <br>and green dots are recovered.</p>
+        </div>
         <p id="pop">Population: 100</p>
         <p id="dead">Dead: 0</p>
         <h3>Disease:</h3>
